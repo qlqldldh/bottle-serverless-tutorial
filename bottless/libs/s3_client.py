@@ -1,5 +1,4 @@
 import boto3
-from os import environ as env
 
 
 class S3Client:
