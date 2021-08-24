@@ -12,6 +12,7 @@ FAKE_DATA = {
     "description": "hello world",
 }
 
+
 @app.route("/profile", method=["GET"])
 def profile():
     s3_client = S3Client()
@@ -23,11 +24,10 @@ def profile():
 
 
 if __name__ == "__main__":
-    # TODO: implements REST API with bottle framework
     # TODO: deploy to AWS Lambda (Serverless) with zappa
     from bottless.config import ENV_PATH
     from dotenv import load_dotenv
 
     load_dotenv(dotenv_path=ENV_PATH)
 
-    run(app=app, host="localhost", port=8080, debug=True)
+    run(app=app, host="0.0.0.0", port=8080, debug=True)
