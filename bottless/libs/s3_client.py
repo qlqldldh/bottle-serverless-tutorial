@@ -1,18 +1,13 @@
 import boto3
 from os import environ as env
 
-
 class S3Client:
-    BUCKET = "dean-insta-clone"
-    REGION = "ap-northeast-2"
-    AWS_ACCESS_KEY = env.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = env.get("AWS_SECRET_ACCESS_KEY")
+    BUCKET = str(env.get("AWS_S3_BUCKET"))
+    REGION = env.get("AWS_REGION")
 
     def __init__(self):
         self.__s3_client = boto3.client(
             service_name="s3",
-            aws_access_key_id=self.AWS_ACCESS_KEY,
-            aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY,
             region_name=self.REGION,
         )
 
