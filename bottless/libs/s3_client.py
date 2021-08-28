@@ -3,8 +3,8 @@ from os import environ as env
 
 
 class S3Client:
-    BUCKET = "dean-insta-clone"
-    REGION = "ap-northeast-2"
+    BUCKET = str(env.get("AWS_S3_BUCKET"))
+    REGION = env.get("AWS_REGION")
 
     def __init__(self):
         self.__s3_client = boto3.client(
