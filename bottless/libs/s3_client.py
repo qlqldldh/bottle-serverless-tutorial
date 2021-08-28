@@ -1,7 +1,6 @@
 import boto3
 from os import environ as env
 
-
 class S3Client:
     BUCKET = str(env.get("AWS_S3_BUCKET"))
     REGION = env.get("AWS_REGION")

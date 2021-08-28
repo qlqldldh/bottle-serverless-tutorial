@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "app_function": "bottless.app.app",
+        "aws_region": "ap-northeast-2",
+        "profile_name": "default",
+        "project_name": "bottless",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-bottless",
+        "base_path": "",
+        "slim_handler": false
+    }
+}
